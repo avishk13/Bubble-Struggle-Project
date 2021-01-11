@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 10;
     public float xBounds = 10;
+    public GameObject spearPrefab;
     
 
     void Start()
@@ -15,13 +16,38 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            FireSpear();             
+        }
 
         MoveLeft();
         MoveRight();
 
+        OnTriggerEnter(spearPrefab.GetComponent<Collider>());
+
+        
+
     }
 
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Obstacle" || other.tag == "Surface")
+        {
+            Destroy(other.gameObject);
+        }
+        
+    }
+    void FireSpear()
+    {
+        float offSet = -1;  
+        Vector3 spawnPosition = new Vector3 (transform.position.x, transform.position.y + offSet, transform.position.z);
+        Instantiate(spearPrefab, spawnPosition, transform.rotation);
+    }
+
+   
+
     //Move right on key press
     void MoveRight()
     {
