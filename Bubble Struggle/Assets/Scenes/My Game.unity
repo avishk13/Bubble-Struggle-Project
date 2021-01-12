@@ -259,6 +259,7 @@ MonoBehaviour:
   xBounds: 14
   spearPrefab: {fileID: 9028926162592058538, guid: 02581a79a403847429a408a76b1f4666,
     type: 3}
+  spearExists: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleObjects: []
   spearPrefab: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1602861696
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleObjects: []
   spearPrefab: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1743778920
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,3 +930,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleObjects: []
   spearPrefab: {fileID: 0}
+  player: {fileID: 0}
