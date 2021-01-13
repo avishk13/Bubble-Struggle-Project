@@ -6,6 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] bubbleObjects;
     private float lowerBound = -12;
+    private float zPosition = -1;
     private float smallBubbleDelay = 1;
     private float oneSplitBubbleDelay = 1;
     private float twoSplitBubbleDelay = 15;
@@ -30,7 +31,7 @@ public class SpawnManager : MonoBehaviour
     {
         GameObject bubble = bubbleObjects[0];
         float randomX = Random.Range(-14.0f, 14.0f);
-        Vector3 randomSpawn = new Vector3(randomX, lowerBound, 0);
+        Vector3 randomSpawn = new Vector3(randomX, lowerBound, zPosition);
         Instantiate(bubble, randomSpawn, bubble.transform.rotation);
 
     }
@@ -39,7 +40,7 @@ public class SpawnManager : MonoBehaviour
     {
         GameObject bubble = bubbleObjects[1];
         float randomX = Random.Range(-14.0f, 14.0f);
-        Vector3 randomSpawn = new Vector3(randomX, lowerBound, 0);
+        Vector3 randomSpawn = new Vector3(randomX, lowerBound, zPosition);
         Instantiate(bubble, randomSpawn, bubble.transform.rotation);
 
     }
@@ -48,7 +49,7 @@ public class SpawnManager : MonoBehaviour
     {
         GameObject bubble = bubbleObjects[2];
         float randomX = Random.Range(-14.0f, 14.0f);
-        Vector3 randomSpawn = new Vector3(randomX, lowerBound, 0);
+        Vector3 randomSpawn = new Vector3(randomX, lowerBound, zPosition);
         Instantiate(bubble, randomSpawn, bubble.transform.rotation);
 
     }
