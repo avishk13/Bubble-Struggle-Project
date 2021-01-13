@@ -7,7 +7,7 @@ public class DetectCollisions : MonoBehaviour
     public GameObject[] bubbleObjects;
     public GameObject spearPrefab;
     //Determines the force at which bubbles are pushed when split
-    private float yPushForce = -12;
+    private float yPushForce = -8;
     private float xPushForce = 5;
 
     void Start()
@@ -27,6 +27,7 @@ public class DetectCollisions : MonoBehaviour
         if (other.CompareTag("Projectile") && gameObject.CompareTag("SmallBubble"))
         {
             Destroy(other.gameObject);
+            GameObject.Find("Player").GetComponent<PlayerController>().spearExists = false;
             Destroy(gameObject);
         }
 
@@ -34,6 +35,7 @@ public class DetectCollisions : MonoBehaviour
         if (other.CompareTag("Projectile") && gameObject.CompareTag("1SplitBubble"))
         {
             Destroy(other.gameObject);
+            GameObject.Find("Player").GetComponent<PlayerController>().spearExists = false;
             Destroy(gameObject);
 
             GameObject bubble1 = Instantiate(bubbleObjects[0], gameObject.transform.position, gameObject.transform.rotation);
@@ -54,6 +56,7 @@ public class DetectCollisions : MonoBehaviour
         if (other.CompareTag("Projectile") && gameObject.CompareTag("2SplitBubble"))
         {
             Destroy(other.gameObject);
+            GameObject.Find("Player").GetComponent<PlayerController>().spearExists = false;
             Destroy(gameObject);
 
             GameObject bubble1 = Instantiate(bubbleObjects[1], gameObject.transform.position, gameObject.transform.rotation);

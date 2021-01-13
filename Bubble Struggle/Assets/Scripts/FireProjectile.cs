@@ -19,6 +19,7 @@ public class FireProjectile : MonoBehaviour
         if(transform.position.y < bottomBound)
         {
             Destroy(gameObject);
+            GameObject.Find("Player").GetComponent<PlayerController>().spearExists = false;
         }                  
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BubbleController : MonoBehaviour
 {
-    private float maxSpeed = 5;
+    private float maxSpeed = 4;
     private Rigidbody bubbleRb;
     void Start()
     {
@@ -14,10 +14,13 @@ public class BubbleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(bubbleRb.velocity.magnitude > maxSpeed)
-        {
+        if (bubbleRb.velocity.y > 0) 
+        { 
+            if (bubbleRb.velocity.magnitude > maxSpeed)
+            {
             bubbleRb.velocity = bubbleRb.velocity.normalized * maxSpeed;
-        }
+            }
 
+        }
     }
 }
