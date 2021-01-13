@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7969674383304755998}
   - component: {fileID: 7969674383304755997}
   - component: {fileID: 7969674383304755993}
+  - component: {fileID: 7969674383304755994}
   - component: {fileID: 7969674383304755995}
-  - component: {fileID: 5772523809977980700}
   m_Layer: 0
   m_Name: 2SplitBubble
   m_TagString: 2SplitBubble
@@ -111,6 +111,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &7969674383304755994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969674383304755996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32cb7cd7db8c5d4893dd584bd1da87f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubbleRb: {fileID: 0}
+  yRiseSpeed: 12
 --- !u!114 &7969674383304755995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,16 +142,3 @@ MonoBehaviour:
   - {fileID: 4421052882094714520, guid: ac300205c17552b4786bcab21ad21d82, type: 3}
   - {fileID: 7969674383304755996}
   spearPrefab: {fileID: 0}
-  player: {fileID: 0}
---- !u!114 &5772523809977980700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7969674383304755996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d5de48049c90dc4596c23d375a34501, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

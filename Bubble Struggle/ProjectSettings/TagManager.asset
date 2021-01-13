@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Surface
+  - Wall
+  - Floor
+  - SmallBubble
+  - 1SplitBubble
+  - 2SplitBubble
+  - Projectile
   layers:
   - Default
   - TransparentFX

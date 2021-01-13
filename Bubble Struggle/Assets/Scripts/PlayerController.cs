@@ -7,19 +7,18 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 10;
     public float xBounds = 10;
     public GameObject spearPrefab;
-    public bool spearExists;
+    
 
     void Start()
     {
-        spearExists = false;
+        
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && spearExists == false)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            FireSpear();
-            spearExists = true;
+            FireSpear();             
         }
 
         MoveLeft();

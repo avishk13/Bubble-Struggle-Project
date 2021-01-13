@@ -7,15 +7,15 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] bubbleObjects;
     private float lowerBound = -12;
     private float smallBubbleDelay = 1;
-    private float oneSplitBubbleDelay = 5;
+    private float oneSplitBubbleDelay = 1;
     private float twoSplitBubbleDelay = 15;
 
 
     void Start()
     {
-        InvokeRepeating("randomSpawnSmallBubble", smallBubbleDelay, 3);
-        InvokeRepeating("randomSpawn1SplitBubble", oneSplitBubbleDelay, 4);
-        InvokeRepeating("randomSpawn2SplitBubble", twoSplitBubbleDelay, 7);
+        InvokeRepeating("randomSpawnSmallBubble", smallBubbleDelay, 2);
+        InvokeRepeating("randomSpawn1SplitBubble", oneSplitBubbleDelay, 3);
+        InvokeRepeating("randomSpawn2SplitBubble", twoSplitBubbleDelay, 5);
     }
 
 
@@ -53,5 +53,17 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Wall"))
+        {
+            Rigidbody bubbleRB = gameObject.GetComponent<Rigidbody>();
+            float bubbleRBVelX = bubbleRB.velocity.x * -1;
+            float bubbleRBVely = bubbleRB.velocity.y;
+            float bubbleRBVelz = bubbleRB.velocity.z;
+
+            gameObject.GetComponent<Rigidbody>().velocity = new Vector3(bubbleRBVelX, bubbleRBVely, bubbleRBVelz);
+            Debug.Log("got collision");
+        }
+    }
 }
