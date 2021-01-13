@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BubbleController : MonoBehaviour
 {
-    private float maxSpeed = 6;
+    private float maxSpeed = 5;
     private Rigidbody bubbleRb;
     void Start()
     {

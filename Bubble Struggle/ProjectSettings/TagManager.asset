@@ -4,13 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Obstacle
-  - Projectile
+  - Surface
+  - Wall
+  - Floor
   - SmallBubble
   - 1SplitBubble
   - 2SplitBubble
-  - Wall
-  - Floor
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -20,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - PostProcessing
   - 
   - 
   - 

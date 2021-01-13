@@ -6,7 +6,6 @@ public class FireProjectile : MonoBehaviour
 {
     public float Speed = 10;
     private float bottomBound = -14;
-    
 
     void Start()
     {
@@ -20,7 +19,6 @@ public class FireProjectile : MonoBehaviour
         if(transform.position.y < bottomBound)
         {
             Destroy(gameObject);
-            GameObject.Find("Player").GetComponent<PlayerController>().spearExists = false;
         }                  
     }
 }
