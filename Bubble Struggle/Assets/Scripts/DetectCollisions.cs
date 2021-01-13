@@ -76,6 +76,7 @@ public class DetectCollisions : MonoBehaviour
             bubble2RB.AddForce(pushDirectionRight, ForceMode.Impulse);
         }
 
+        //Bubble bounces off walls
         if (other.CompareTag("Wall"))
         {
             Rigidbody bubbleRB = gameObject.GetComponent<Rigidbody>();
@@ -89,6 +90,11 @@ public class DetectCollisions : MonoBehaviour
         if (other.CompareTag("Floor"))
         {
             Destroy(gameObject);
+        }
+
+        if (other.CompareTag("Surface"))
+        {
+            Debug.Log("Game Over!");
         }
     }
 }
