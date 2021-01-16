@@ -6,7 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] bubbleObjects;
     private float lowerBound = -12;
-    private float zPosition = -1;
+    private float zPosition = -1.5f;
     private float smallBubbleDelay = 1;
     private float oneSplitBubbleDelay = 1;
     private float twoSplitBubbleDelay = 15;

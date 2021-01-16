@@ -9,6 +9,7 @@ public class DetectCollisions : MonoBehaviour
     //Determines the force at which bubbles are pushed when split
     private float yPushForce = -8;
     private float xPushForce = 5;
+    public ParticleSystem popParticle;
 
     void Start()
     {
@@ -28,6 +29,8 @@ public class DetectCollisions : MonoBehaviour
         {
             Destroy(other.gameObject);
             GameObject.Find("Player").GetComponent<PlayerController>().spearExists = false;
+            //popParticle.transform.position = gameObject.transform.position;
+            //popParticle.Play();
             Destroy(gameObject);
         }
 
@@ -36,6 +39,7 @@ public class DetectCollisions : MonoBehaviour
         {
             Destroy(other.gameObject);
             GameObject.Find("Player").GetComponent<PlayerController>().spearExists = false;
+            //popParticle.Play();
             Destroy(gameObject);
 
             GameObject bubble1 = Instantiate(bubbleObjects[0], gameObject.transform.position, gameObject.transform.rotation);
@@ -57,6 +61,7 @@ public class DetectCollisions : MonoBehaviour
         {
             Destroy(other.gameObject);
             GameObject.Find("Player").GetComponent<PlayerController>().spearExists = false;
+            //popParticle.Play();
             Destroy(gameObject);
 
             GameObject bubble1 = Instantiate(bubbleObjects[1], gameObject.transform.position, gameObject.transform.rotation);

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7969674383304755993}
   - component: {fileID: 7969674383304755995}
   - component: {fileID: -8788527010402223275}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 2SplitBubble
   m_TagString: 2SplitBubble
   m_Icon: {fileID: 0}
@@ -128,6 +128,7 @@ MonoBehaviour:
   - {fileID: 4421052882094714520, guid: ac300205c17552b4786bcab21ad21d82, type: 3}
   - {fileID: 7969674383304755996}
   spearPrefab: {fileID: 0}
+  popParticle: {fileID: 0}
 --- !u!114 &-8788527010402223275
 MonoBehaviour:
   m_ObjectHideFlags: 0

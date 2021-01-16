@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 919754025414045038}
   - component: {fileID: 919754025414045036}
   - component: {fileID: 3919440237651552191}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SmallBubble
   m_TagString: SmallBubble
   m_Icon: {fileID: 0}
@@ -128,6 +128,7 @@ MonoBehaviour:
   - {fileID: 4421052882094714520, guid: ac300205c17552b4786bcab21ad21d82, type: 3}
   - {fileID: 7969674383304755996, guid: f7cb387363fb0ca499de3e8338e279bf, type: 3}
   spearPrefab: {fileID: 0}
+  popParticle: {fileID: 19814690, guid: cd4d7020429cde74db076ffa72495419, type: 3}
 --- !u!114 &3919440237651552191
 MonoBehaviour:
   m_ObjectHideFlags: 0
