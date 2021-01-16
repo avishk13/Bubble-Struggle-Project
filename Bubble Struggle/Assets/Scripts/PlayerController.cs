@@ -8,10 +8,19 @@ public class PlayerController : MonoBehaviour
     public float xBounds = 10;
     public GameObject spearPrefab;
     public bool spearExists;
-    
+    private Vector3 characterScale;
+    private float rightScale;
+    private float leftScale;
+
+
+
+
 
     void Start()
     {
+        characterScale = transform.localScale;
+        rightScale = characterScale.x;
+        leftScale = (characterScale.x) * -1;
         
     }
 
@@ -21,12 +30,15 @@ public class PlayerController : MonoBehaviour
         {
             FireSpear();
             spearExists = true;
+            
         }
 
         MoveLeft();
         MoveRight();
-
+        
         OnTriggerEnter(spearPrefab.GetComponent<Collider>());
+
+        var movment = Input.GetAxis("Horizontal");
 
         
 
@@ -55,6 +67,8 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.RightArrow))
         {
+            characterScale.x = rightScale;
+            transform.localScale = characterScale;
             if (transform.position.x < xBounds)
             {
                 transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
@@ -68,6 +82,8 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            characterScale.x = leftScale;
+            transform.localScale = characterScale;
             if (transform.position.x > -xBounds)
             {
                 transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
