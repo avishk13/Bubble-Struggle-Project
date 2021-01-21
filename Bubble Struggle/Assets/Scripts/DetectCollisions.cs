@@ -97,6 +97,7 @@ public class DetectCollisions : MonoBehaviour
         if (other.CompareTag("Surface"))
         {
             Debug.Log("Game Over!");
+            GameObject.Find("Spawn Manager").GetComponent<SpawnManager>().gameIsActive = false;
         }
     }
 }

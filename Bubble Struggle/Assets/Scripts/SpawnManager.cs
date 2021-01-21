@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -10,21 +12,36 @@ public class SpawnManager : MonoBehaviour
     private float smallBubbleDelay = 1;
     private float oneSplitBubbleDelay = 1;
     private float twoSplitBubbleDelay = 15;
+    private float spawnRate;
+    public TextMeshProUGUI timerText;
+    public int timerInt;
+    public bool gameIsActive;
+    public GameObject gameOverText;
+    public GameObject tryAgainText;
+    public GameObject quitText;
+    public GameObject startMenu;
 
 
     void Start()
     {
-        InvokeRepeating("randomSpawnSmallBubble", smallBubbleDelay, 2);
-        InvokeRepeating("randomSpawn1SplitBubble", oneSplitBubbleDelay, 3);
-        InvokeRepeating("randomSpawn2SplitBubble", twoSplitBubbleDelay, 5);
+        gameIsActive = true;
+        timerText.text = "Time: " + timerInt;
+        if(gameIsActive)
+        {
+            
+        }
+        //StartGame();
     }
 
 
     void Update()
     {
+        if (!gameIsActive)
+        {
+            StopGame();
+        }
 
-        
-
+ 
     }
 
     void randomSpawnSmallBubble()
@@ -66,5 +83,52 @@ public class SpawnManager : MonoBehaviour
             gameObject.GetComponent<Rigidbody>().velocity = new Vector3(bubbleRBVelX, bubbleRBVely, bubbleRBVelz);
             Debug.Log("got collision");
         }
+    }
+
+    IEnumerator AddToTimer ()
+    {
+        while (gameIsActive)
+        {
+            yield return new WaitForSeconds(1);
+            timerInt++;         
+            timerText.text = "Time: " + timerInt;          
+        }
+    }
+
+
+    //public void StartGame(int difficulty)
+    public void StartGame()
+    {
+        gameIsActive = true;
+        //spawnRate /= difficulty;
+        //InvokeRepeating("randomSpawnSmallBubble", smallBubbleDelay, spawnRate);
+        //InvokeRepeating("randomSpawn1SplitBubble", oneSplitBubbleDelay, spawnRate * (spawnRate / 2));
+        //InvokeRepeating("randomSpawn2SplitBubble", twoSplitBubbleDelay, spawnRate * 2.5f);
+        InvokeRepeating("randomSpawnSmallBubble", smallBubbleDelay, 2);
+        InvokeRepeating("randomSpawn1SplitBubble", oneSplitBubbleDelay, 3);
+        InvokeRepeating("randomSpawn2SplitBubble", twoSplitBubbleDelay, 5);
+        timerInt = 0;
+        StartCoroutine(AddToTimer());
+        startMenu.SetActive(false);
+    }
+
+
+    void StopGame()
+    {
+        CancelInvoke();
+        gameIsActive = false;
+        gameOverText.SetActive(true);
+        tryAgainText.SetActive(true);
+        quitText.SetActive(true);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
