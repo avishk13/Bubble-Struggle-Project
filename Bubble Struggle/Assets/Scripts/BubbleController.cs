@@ -6,9 +6,11 @@ public class BubbleController : MonoBehaviour
 {
     private float maxSpeed = 4;
     private Rigidbody bubbleRb;
+    private SpawnManager spawnManager;
     void Start()
     {
         bubbleRb = gameObject.GetComponent<Rigidbody>();
+        spawnManager = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
     }
 
     // Update is called once per frame
@@ -21,6 +23,11 @@ public class BubbleController : MonoBehaviour
             bubbleRb.velocity = bubbleRb.velocity.normalized * maxSpeed;
             }
 
+        }
+
+        if (spawnManager.GetComponent<SpawnManager>().gameIsActive == false)
+        {
+            bubbleRb.velocity = Vector3.zero;
         }
     }
 }

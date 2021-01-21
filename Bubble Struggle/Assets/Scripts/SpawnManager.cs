@@ -21,6 +21,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject tryAgainText;
     public GameObject quitText;
     public GameObject startMenu;
+    public GameObject bubbleObject;
 
 
     void Start()
@@ -120,6 +121,7 @@ public class SpawnManager : MonoBehaviour
         gameOverText.SetActive(true);
         tryAgainText.SetActive(true);
         quitText.SetActive(true);
+
     }
 
     public void RestartGame()
