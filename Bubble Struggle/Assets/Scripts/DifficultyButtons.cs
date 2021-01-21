@@ -27,7 +27,7 @@ public class DifficultyButtons : MonoBehaviour
 
     void SetDifficulty()
     {
-        //spawnManager.StartGame(difficulty);
-        spawnManager.StartGame();
+        spawnManager.StartGame(difficulty);
+        //spawnManager.StartGame();
     }
 }

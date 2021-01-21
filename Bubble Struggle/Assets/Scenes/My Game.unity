@@ -1828,7 +1828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654688de187cecd45ba9b16d03e15299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficuty: 3
+  difficulty: 1
 --- !u!1 &942475739
 GameObject:
   m_ObjectHideFlags: 0
@@ -2121,7 +2121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654688de187cecd45ba9b16d03e15299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficuty: 1
+  difficulty: 3
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2596,7 +2596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654688de187cecd45ba9b16d03e15299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficuty: 2
+  difficulty: 2
 --- !u!1001 &1291781717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3789,7 +3789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19811986, guid: 6636b3078b0905e489f698a11b7a6b6b, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 19811986, guid: 6636b3078b0905e489f698a11b7a6b6b, type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
@@ -3933,6 +3933,7 @@ MonoBehaviour:
   timerText: {fileID: 578754174}
   timerInt: 0
   gameIsActive: 0
+  isFirstLaunchMenu: 0
   gameOverText: {fileID: 1474688712}
   tryAgainText: {fileID: 1483599244}
   quitText: {fileID: 2103207127}

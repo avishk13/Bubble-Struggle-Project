@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 characterScale;
     private float rightScale;
     private float leftScale;
+    private SpawnManager spawnManager;
 
 
 
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        spawnManager = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
         characterScale = transform.localScale;
         rightScale = characterScale.x;
         leftScale = (characterScale.x) * -1;
@@ -26,15 +28,18 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !spearExists)
+        if (spawnManager.gameIsActive && !spawnManager.isFirstLaunchMenu)
         {
-            FireSpear();
-            spearExists = true;
-            
-        }
+            if (Input.GetKeyDown(KeyCode.Space) && !spearExists)
+            {
+                FireSpear();
+                spearExists = true;
 
-        MoveLeft();
-        MoveRight();
+            }
+            MoveLeft();
+            MoveRight();
+        }
+        
         
         OnTriggerEnter(spearPrefab.GetComponent<Collider>());
 

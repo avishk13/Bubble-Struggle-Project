@@ -16,6 +16,7 @@ public class SpawnManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     public int timerInt;
     public bool gameIsActive;
+    public bool isFirstLaunchMenu;
     public GameObject gameOverText;
     public GameObject tryAgainText;
     public GameObject quitText;
@@ -25,11 +26,9 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         gameIsActive = true;
+        isFirstLaunchMenu = true;
         timerText.text = "Time: " + timerInt;
-        if(gameIsActive)
-        {
-            
-        }
+        spawnRate = 5;
         //StartGame();
     }
 
@@ -96,20 +95,21 @@ public class SpawnManager : MonoBehaviour
     }
 
 
-    //public void StartGame(int difficulty)
-    public void StartGame()
+    public void StartGame(int difficulty)
+    //public void StartGame()
     {
         gameIsActive = true;
-        //spawnRate /= difficulty;
-        //InvokeRepeating("randomSpawnSmallBubble", smallBubbleDelay, spawnRate);
-        //InvokeRepeating("randomSpawn1SplitBubble", oneSplitBubbleDelay, spawnRate * (spawnRate / 2));
-        //InvokeRepeating("randomSpawn2SplitBubble", twoSplitBubbleDelay, spawnRate * 2.5f);
-        InvokeRepeating("randomSpawnSmallBubble", smallBubbleDelay, 2);
-        InvokeRepeating("randomSpawn1SplitBubble", oneSplitBubbleDelay, 3);
-        InvokeRepeating("randomSpawn2SplitBubble", twoSplitBubbleDelay, 5);
+        spawnRate /= difficulty;
+        InvokeRepeating("randomSpawnSmallBubble", smallBubbleDelay, spawnRate);
+        InvokeRepeating("randomSpawn1SplitBubble", oneSplitBubbleDelay, spawnRate * (spawnRate / 2));
+        InvokeRepeating("randomSpawn2SplitBubble", twoSplitBubbleDelay, spawnRate * 2.5f);
+        //InvokeRepeating("randomSpawnSmallBubble", smallBubbleDelay, 2);
+        //InvokeRepeating("randomSpawn1SplitBubble", oneSplitBubbleDelay, 3);
+        //InvokeRepeating("randomSpawn2SplitBubble", twoSplitBubbleDelay, 5);
         timerInt = 0;
         StartCoroutine(AddToTimer());
         startMenu.SetActive(false);
+        isFirstLaunchMenu = false;
     }
 
 
